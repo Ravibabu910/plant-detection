@@ -1,0 +1,104 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-image: url('https://img.freepik.com/free-photo/woman-holding-tablet-farm-field_23-2148579950.jpg?t=st=1714199197~exp=1714202797~hmac=9ce0e4a4ecac48b121792990191387e5206dc984a62f29763fcc0bb7eabff606&w=1380');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.upload-area {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.upload-area input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+  background-color: #45a049;
+}
+
+#image-preview {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+#result-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+#disease-result {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .upload-area,
+  #result-container {
+    padding: 20px;
+  }
+
+  #disease-result {
+    font-size: 20px;
+  }
+}
