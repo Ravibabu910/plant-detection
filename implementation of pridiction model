@@ -1,0 +1,23 @@
+
+from flask import Flask, request, jsonify
+import numpy as np
+from PIL import Image
+from utils.model import load_model, predict_disease
+
+app = Flask(__name__)
+model = load_model('models/plant_disease_model.h5')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    file = request.files['image']
+    img = Image.open(file.stream)
+    img = img.resize((64, 64))
+    img_array = np.array(img) / 255.0
+    img_array = np.expand_dims(img_array, axis=0)
+
+    prediction = predict_disease(model, img_array)
+    return jsonify({'prediction': prediction})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
